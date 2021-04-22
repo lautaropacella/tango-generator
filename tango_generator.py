@@ -2,7 +2,6 @@
 import streamlit as st
 from aitextgen.TokenDataset import TokenDataset
 from aitextgen.tokenizers import train_tokenizer
-from aitextgen.utils import GPT2ConfigCPU
 from aitextgen import aitextgen
 from PIL import Image
 ai = aitextgen(model_folder="trained_model",
