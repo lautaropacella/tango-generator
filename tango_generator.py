@@ -7,8 +7,9 @@ from PIL import Image
 ai = aitextgen(model_folder="trained_model",
                 tokenizer_file="aitextgen.tokenizer.json")
 favicon = Image.open("favicon.png")
+banner = Image.open('Tango2.jpg')
 st.set_page_config(page_title='Tango Cromado', page_icon = favicon, layout="wide")
-image1 = Image.open('Tango2.jpg')
+
 
 expli = st.sidebar.beta_expander("Temperature", expanded=False)
 with expli:
@@ -29,7 +30,7 @@ st.title('Tango Cromado')
 st.subheader('Generación automática de letras de tango utilizando la arquitectura del Modelo GPT-2')
 st.markdown('Creado por Lautaro Pacella')
 
-st.image(image2)
+st.image(banner)
 
 inicio = st.text_input('Podes empezar con una palabra o frase tuya o dejar que el modelo genere una letra completamente al azar')
 propio = st.button("Generar")
