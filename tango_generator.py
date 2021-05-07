@@ -29,7 +29,7 @@ st.subheader('Creado por Lautaro Pacella')
 
 st.image(image2)
            
-st.mmarkdown(** 'Generación de letras de tango utilizando la arquitectura del Modelo GPT-2' **)
+st.markdown(** 'Generación de letras de tango utilizando la arquitectura del Modelo GPT-2' **)
 inicio = st.text_input('Podes empezar con una palabra o frase tuya o dejar que el modelo genere una letra completamente al azar')
 propio = st.button("Generar")
 
