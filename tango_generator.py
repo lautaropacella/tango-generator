@@ -6,7 +6,7 @@ from aitextgen import aitextgen
 from PIL import Image
 ai = aitextgen(model_folder="trained_model",
                 tokenizer_file="aitextgen.tokenizer.json")
-st.beta_set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 image2 = Image.open('Tango2.jpg')
 
 expli = st.sidebar.beta_expander("Temperature", expanded=False)
