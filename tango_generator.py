@@ -23,12 +23,13 @@ expli3 = st.sidebar.beta_expander("Top P", expanded=False)
 with expli3:
     st.write('Probabilidad cumulativa del modelo para elegir las palabras de la letra (recomendado: 0.9)') 
 top_p = st.sidebar.slider("",value=0.9, min_value=0.5, max_value=1.0, step=0.1)
-st.sidebar.write("Creado por Lautaro Pacella")
     
 st.title('Tango Cromado')
-st.subheader('Generación de letras de tango utilizando la arquitectura del Modelo GPT-2')
+st.subheader('Creado por Lautaro Pacella')
 
 st.image(image2)
+           
+st.mmarkdown(** 'Generación de letras de tango utilizando la arquitectura del Modelo GPT-2' **)
 inicio = st.text_input('Podes empezar con una palabra o frase tuya o dejar que el modelo genere una letra completamente al azar')
 propio = st.button("Generar")
 
