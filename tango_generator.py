@@ -6,7 +6,7 @@ from aitextgen import aitextgen
 from PIL import Image
 ai = aitextgen(model_folder="trained_model",
                 tokenizer_file="aitextgen.tokenizer.json")
-
+st.beta_set_page_config(layout="wide")
 image2 = Image.open('Tango2.jpg')
 
 expli = st.sidebar.beta_expander("Temperature", expanded=False)
@@ -21,16 +21,15 @@ top_k = st.sidebar.slider("",value=0, min_value=0, max_value=40, step=1)
 
 expli3 = st.sidebar.beta_expander("Top P", expanded=False)
 with expli3:
-    st.write('Probabilidad cumulativa del modelo pero para elegir las palabras de la letra (recomendado: 0.9)') 
+    st.write('Probabilidad cumulativa del modelo para elegir las palabras de la letra (recomendado: 0.9)') 
 top_p = st.sidebar.slider("",value=0.9, min_value=0.5, max_value=1.0, step=0.1)
 
     
 st.title('Tango Cromado')
+st.subheader('Generación de letras de tango utilizando la arquitectura del Modelo GPT-2')
 st.write('Creado por Lautaro Pacella')
 st.image(image2)
-st.subheader('Generación de letras de tango utilizando la arquitectura del Modelo GPT-2')
-st.write('Podes empezar con una palabra o frase tuya o dejar que el modelo genere una letra completamente al azar')
-inicio = st.text_input('¿Que se le ocurre compadrito?')
+inicio = st.text_input('Podes empezar con una palabra o frase tuya o dejar que el modelo genere una letra completamente al azar')
 propio = st.button("Generar")
 
 if propio:
