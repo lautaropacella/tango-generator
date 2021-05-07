@@ -6,7 +6,7 @@ from aitextgen import aitextgen
 from PIL import Image
 ai = aitextgen(model_folder="trained_model",
                 tokenizer_file="aitextgen.tokenizer.json")
-favicon = Image.open("favicon.jpg")
+favicon = Image.open("favicon.png")
 st.set_page_config(page_title='Tango Cromado', page_icon = favicon, layout="wide")
 image1 = Image.open('Tango2.jpg')
 
