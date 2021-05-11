@@ -4,12 +4,20 @@ from aitextgen.TokenDataset import TokenDataset
 from aitextgen.tokenizers import train_tokenizer
 from aitextgen import aitextgen
 from PIL import Image
-ai = aitextgen(model_folder="trained_model",
-                tokenizer_file="aitextgen.tokenizer.json")
+
+st.set_page_config(page_title='Tango Cromado', page_icon = "favicon.png", layout="wide")
+
+@st.cache(hash_funcs={aitextgen: id})
+
+def load_model():
+
+  ai = aitextgen(model_folder="trained_model", tokenizer_file="aitextgen.tokenizer.json")
+
+  return ai
+ai = load_model()
+
 favicon = Image.open("favicon.png")
 banner = Image.open('Tango2.jpg')
-st.set_page_config(page_title='Tango Cromado', page_icon = favicon, layout="wide")
-
 
 expli = st.sidebar.beta_expander("Temperature", expanded=False)
 with expli:
