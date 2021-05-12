@@ -7,7 +7,7 @@ from PIL import Image
 
 st.set_page_config(page_title='Tango Cromado', page_icon = "favicon.png", layout="wide")
 
-@st.cache(hash_funcs={aitextgen: id})
+@st.cache(hash_funcs={aitextgen: id}, ttl=60*10)
 
 def load_model():
 
